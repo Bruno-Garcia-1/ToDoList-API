@@ -16,16 +16,6 @@ class TodoSeeder extends Seeder
      */
     public function run()
     {
-        /*User::all()->each(function($user){
-            $user->todos()->saveMany(
-                factory(Todo::class, 10)->make()
-            )->each(function($todo){
-                $todo->tasks()->saveMany(
-                    factory(TodoTask::class)->make()
-                );
-            });
-        });
-        */
         User::all()->each(function($user){
             $user->todos()->saveMany(
                 Todo::factory()->count(10)->make()
